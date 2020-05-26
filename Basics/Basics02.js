@@ -56,6 +56,7 @@ switch (job) {
     console.log(firstName + "designs beautiful web");
     break;
   default:
+    // case에 들어가지 않는 값들은 default로 처리해준다.
     console.log(firstName + "does something else");
   // 여기는 break필요없어, 마지막 문항이니까.
 }
@@ -77,3 +78,24 @@ switch (true) {
   default:
     console.log(firstName + " is a man");
 }
+
+// falsy values: undefined, null, 0, '', NaN
+// truthy values: Not falsy values
+
+var height;
+height = 0; // it says it's not defined
+if (height || height === 0) {
+  // now it makes zero defined
+  console.log("variable is defined");
+} else {
+  console.log("variables has not been defined");
+}
+// equality operators
+height = 23;
+if (height == "23") {
+  console.log("the == operator does type coercion!");
+} else if (height === "23") {
+  console.log("the === doesn't support type coercion ");
+}
+
+// == 는 type coercion 실행, ===는 type 변환 ㄴㄴ 23 과 '23'은 다른 것이기에
